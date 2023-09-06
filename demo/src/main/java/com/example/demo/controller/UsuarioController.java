@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.model.Usuario;
 import com.example.demo.repository.UserRepository;
 
-@RestController
+@RestController(value = "/users")
 public class UsuarioController {
     @Autowired
     private UserRepository repository;
