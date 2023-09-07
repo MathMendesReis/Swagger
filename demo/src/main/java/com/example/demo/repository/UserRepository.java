@@ -5,11 +5,15 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.example.demo.handler.BusinessException;
 import com.example.demo.model.Usuario;
 
 @Repository
 public class UserRepository {
     public void save(Usuario usuario){
+        if(usuario.getLogin() == null){
+            throw new BusinessException("O campo login e obrigatorio");
+        }
         if(usuario.getId() == null){
             System.out.println("SAVE");
         }else{
